@@ -19,6 +19,5 @@ function welcomeMassage(name){
     }
 }
 
-const welcomed = welcomeMassage("Mukta Hoque")("Good Morning");
+const welcomed = welcomeMassage("Mukta Hoque")("Good Morning")
 console.log(welcomed);
-
