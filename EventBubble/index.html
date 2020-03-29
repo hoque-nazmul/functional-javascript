@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+    <style>
+        *{padding:0; margin:0}
+        #container{color:white; background-color: cyan; padding:20px 30px; width: 400px}
+        #heading{border-bottom: 1px solid gray; margin-bottom: 20px;padding-bottom: 10px;}
+        #lists {list-style-type: none;}
+        .list {padding: 5px 0px; font-weight: 500;}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2 id="heading">My List</h2>
+        <ul id="lists">
+            <li id="first" class="list">Lorem, ipsum dolor.</li>
+            <li id="seccond" class="list">Velit, ipsam quod.</li>
+            <li class="list">Natus, eius? Quo!</li>
+            <li class="list">Sequi, blanditiis voluptate.</li>
+            <li class="list">Eligendi, ad magnam?</li>
+        </ul>
+    </div>
+    <script>
+        // Please, Check the EventBubble working tree image to know the event buble work flow
+        // we controll or handle event bubbling by using event.stoppropagation() function.
+        document.getElementById("lists").addEventListener('click', function(event){
+            console.log("UL is Clicked...");
+        });
+        document.getElementById("heading").addEventListener("click", function(event){
+            console.log("Heading is Clicked");
+            event.stopPropagation();
+        });
+        document.getElementById("container").addEventListener("click", function(event){
+            console.log("Container is clicked");
+        });
+        document.getElementById("first").addEventListener('click', function(event){
+            console.log("First Item Clicked...");
+            event.stopPropagation();
+        });
+        
+    </script>
+</body>
+</html>
